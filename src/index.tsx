@@ -48,11 +48,11 @@ export const Link = ({ to, children }) => {
   );
 };
 
-const SimpleBlessedRouter = props => {
-  const [currentUrl, setCurrentUrl] = useState(props.defaultUrl || "/");
+const SimpleBlessedRouter = ({ defaultUrl, children }) => {
+  const [currentUrl, setCurrentUrl] = useState(defaultUrl || "/");
   return (
     <RouteContext.Provider value={{ currentUrl, setCurrentUrl }}>
-      {props.children}
+      {children}
     </RouteContext.Provider>
   );
 };
