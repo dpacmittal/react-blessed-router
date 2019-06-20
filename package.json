@@ -2,16 +2,24 @@
   "name": "react-blessed-router",
   "version": "0.1.0",
   "description": "An extremely simple router for react-blessed",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Deepak Mittal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpacmittal/react-blessed-router"
+  },
+  "license": "MIT",
   "devDependencies": {
-    "blessed": "^0.1.81",
+    "@types/react": "^16.8.21",
     "react": "^16.8.6",
     "react-blessed": "^0.6.0",
     "typescript": "^3.5.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "blessed": "^0.1.81"
   }
 }
