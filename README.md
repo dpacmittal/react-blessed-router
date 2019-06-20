@@ -4,24 +4,24 @@ This is a very simple routing package for react-blessed.
 
 ## Usage
 
-```
+```typescript
 import React from "react";
 import blessed from "neo-blessed";
 import { createBlessedRenderer } from "react-blessed";
-import ReactBlessedRouter, {Route, Link} from "react-blessed-router";
+import ReactBlessedRouter, { Route, Link } from "react-blessed-router";
 
-const App = ()=>(
-    <ReactBlessedRouter>
-        <Route path="/screen2">
-            <Screen2 />
-        </Route>
-        <Route Path="/screen1">
-            <Screen1 />
-        </Route>
-        <Link to="/screen1">Go to Screen 1</Link>
-        <Link to="/screen2">Go to Screen 2</Link>
-    </ReactBlessedRouter>
-)
+const App = () => (
+  <ReactBlessedRouter>
+    <Route path="/screen2">
+      <Screen2 />
+    </Route>
+    <Route Path="/screen1">
+      <Screen1 />
+    </Route>
+    <Link to="/screen1">Go to Screen 1</Link>
+    <Link to="/screen2">Go to Screen 2</Link>
+  </ReactBlessedRouter>
+);
 const screen = blessed.screen({
   autoPadding: true,
   smartCSR: true,
