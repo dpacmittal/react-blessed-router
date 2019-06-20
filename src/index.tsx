@@ -1,6 +1,11 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
 
-const RouteContext = createContext({ currentUrl: "/", setCurrentUrl: null });
+const DefaultContext: {
+  currentUrl: string;
+  setCurrentUrl: any;
+} = { currentUrl: "/", setCurrentUrl: null };
+
+const RouteContext = createContext(DefaultContext);
 
 const stylesheet = {
   bordered: {
@@ -19,7 +24,14 @@ const stylesheet = {
     }
   }
 };
-export const Route = ({ children, path, ...props }) => {
+export const Route = ({
+  children,
+  path,
+  ...props
+}: {
+  children: any;
+  path: string;
+}) => {
   const { currentUrl } = useContext(RouteContext);
   //console.log("Current url is ", currentUrl);
   if (currentUrl == path)
@@ -27,7 +39,7 @@ export const Route = ({ children, path, ...props }) => {
   return null;
 };
 
-export const Link = ({ to, children }) => {
+export const Link = ({ to, children }: { to: string; children: any }) => {
   const { currentUrl, setCurrentUrl } = useContext(RouteContext);
   function switchRoute() {
     if (to == currentUrl) return null;
@@ -48,7 +60,13 @@ export const Link = ({ to, children }) => {
   );
 };
 
-const SimpleBlessedRouter = ({ defaultUrl, children }) => {
+const ReactBlessedRouter = ({
+  defaultUrl,
+  children
+}: {
+  defaultUrl: string;
+  children: any;
+}) => {
   const [currentUrl, setCurrentUrl] = useState(defaultUrl || "/");
   return (
     <RouteContext.Provider value={{ currentUrl, setCurrentUrl }}>
@@ -57,4 +75,4 @@ const SimpleBlessedRouter = ({ defaultUrl, children }) => {
   );
 };
 
-export default SimpleBlessedRouter;
+export default ReactBlessedRouter;
