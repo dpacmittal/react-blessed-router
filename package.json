@@ -1,6 +1,6 @@
 {
   "name": "react-blessed-router",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "An extremely simple router for react-blessed",
   "main": "lib/index.js",
   "files": [
