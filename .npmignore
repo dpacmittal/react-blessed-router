@@ -1,2 +1,5 @@
 src/
 examples/
+tsconfig.json
+yarn-error.log
+*.tsx
