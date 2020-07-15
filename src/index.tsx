@@ -8,7 +8,7 @@ const ReactBlessedRouter = ({
   children,
 }: {
   defaultUrl: string;
-  children: any;
+  children: React.ReactChildren;
 }) => {
   const [currentUrl, setCurrentUrl] = useState(defaultUrl || "/");
   return (

@@ -14,12 +14,16 @@
   "license": "MIT",
   "devDependencies": {
     "@types/react": "^16.8.21",
+    "@types/react-blessed": "^0.3.2",
+    "neo-blessed": "^0.2.0",
     "react": "^16.8.6",
     "react-blessed": "^0.6.0",
     "typescript": "^3.5.2"
   },
   "dependencies": {},
   "peerDependencies": {
-    "blessed": "^0.1.81"
+    "blessed": "^0.1.81",
+    "react": "^16.8.6",
+    "react-blessed": "^0.6.0"
   }
 }
