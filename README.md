@@ -7,10 +7,3 @@ This is a very simple routing package for react-blessed.
 # Usage
 
 See [examples directory](examples/)
-
-// Rendering the React app using our screen
-render(<App />, screen);
-
-```
-
-```
