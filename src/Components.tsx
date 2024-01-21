@@ -4,6 +4,16 @@ import useRouter from "./useRouter";
 export const Route = ({ children, path }: { children: any; path: string }) => {
   const { route } = useRouter();
   if (route == path) return <>{children}</>;
+  const routePathHasWildcard = path.indexOf('*') > -1;
+  const routePathIsWildcard = path == '*';
+  const userRouteIsRoot = route == '/';
+  if(routePathHasWildcard){
+      if(userRouteIsRoot) return null;
+      if(routePathIsWildcard) return <>{children}</>;
+      // If of the form /path/to/*, need to check for /path/to
+      const pathWithoutWildcard = path.replace(/\*$/, '');
+      if(route.startsWith(pathWithoutWildcard)) return <>{children}</>;
+  }
   return null;
 };
 
